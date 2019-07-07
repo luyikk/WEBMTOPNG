@@ -20,15 +20,18 @@ namespace loadraw
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            int w = 2000;
+            int h = 3000;
+
             using (var stream = new FileStream("a.raw", FileMode.Open, FileAccess.Read))
             {
-                var image = new Bitmap(1920, 1080, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+                var image = new Bitmap(w, h, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
                 var read = new BinaryReader(stream);
 
-                for (int y = 0; y < 1080; y++)
+                for (int y = 0; y < h; y++)
                 {
-                    for (int x = 0; x < 1920; x++)
+                    for (int x = 0; x < w; x++)
                     {
                         
                         var b = read.ReadByte();

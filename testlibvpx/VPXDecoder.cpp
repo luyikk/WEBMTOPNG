@@ -92,7 +92,7 @@ VPXDecoder::IMAGE_ERROR VPXDecoder::getImage(Image &image)
 		// It appears to work, at least.
 		if (img->cs != VPX_CS_UNKNOWN)
 			m_last_space = img->cs;
-		if ((img->fmt & VPX_IMG_FMT_PLANAR) && !(img->fmt & (VPX_IMG_FMT_HAS_ALPHA | VPX_IMG_FMT_HIGHBITDEPTH)))
+		if ((img->fmt & VPX_IMG_FMT_PLANAR) && !(img->fmt & VPX_IMG_FMT_HIGHBITDEPTH))
 		{
 			if (img->stride[0] && img->stride[1] && img->stride[2])
 			{
